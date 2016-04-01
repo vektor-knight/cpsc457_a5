@@ -1,3 +1,7 @@
+// Do we need both of these includes?
+#include <pthread.h>
+#include <stdint.h>
+
 #define MAX_QUEUE_SIZE 20
 
 typedef struct queue {
@@ -8,11 +12,11 @@ typedef struct queue {
 	// any more variables that you need can be added
 } prod_cons_queue;
 
-void queue_initialize( prod_cons_queue *q );
+void queue_initialize(prod_cons_queue *q);
 // initialize all queue variables and set element pointers to
 // NULL
 
-void queue_add( prod_cons_queue *q, int element );
+void queue_add(prod_cons_queue *q, int element);
 
-int queue_remove( prod_cons_queue *q );
+int queue_remove(prod_cons_queue *q);
 // the removed element is returned in a double pointer “data”
